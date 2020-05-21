@@ -84,7 +84,11 @@ Route::group('', function () {
             // 删除图书
             Route::delete(':bid', 'api/v1.Book/delete');
         });
-
+        Route::group('banner',function(){
+            Route::get('','api/v1.Banner/getBanners');
+            Route::post('','api/v1.Banner/addBanner');
+            Route::delete('','api/v1.Banner/deleteBanner');
+        });
     });
 })->middleware(['Auth','ReflexValidate'])->allowCrossDomain();
 
