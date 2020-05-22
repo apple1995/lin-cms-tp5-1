@@ -88,6 +88,14 @@ Route::group('', function () {
             Route::get('','api/v1.Banner/getBanners');
             Route::post('','api/v1.Banner/addBanner');
             Route::delete('','api/v1.Banner/deleteBanner');
+            // 编辑轮播图主体信息
+            Route::put(':id','api/v1.Banner/editBannerInfo');
+            // 新增轮播图元素
+            Route::post('item','api/v1.Banner/addBannerItem');
+            // 编辑轮播图元素
+            Route::put('item','api/v1.Banner/editBannerItem');
+            // 删除轮播图元素
+            Route::delete('item','api/v1.Banner/delBannerItem');
         });
     });
 })->middleware(['Auth','ReflexValidate'])->allowCrossDomain();
